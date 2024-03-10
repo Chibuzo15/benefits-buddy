@@ -16,7 +16,7 @@ const Footer = () => {
         },
         {
             title: 'Contact',
-            href: '/contact'
+            href: 'mailto:contact@benefitsbuddy.com'
         },
     ]
 
@@ -30,7 +30,7 @@ const Footer = () => {
                     className="bg-black h-[53px] w-[53px] rounded-[50%]"
                 ></div>
             </div>
-            <div className='flex flex-wrap sm:flex-nowrap space-x-[35px] xl:space-x-[55px] font-[500] '>
+            <div className='flex flex-wrap sm:flex-nowrap space-x-[14px] md:space-x-[35px] xl:space-x-[55px] font-[500] '>
                 {
                     navLinks?.map((link) => {
                         return (<Link
@@ -41,7 +41,7 @@ const Footer = () => {
                 }
             </div>
         </div>
-        <div className='mx-[10px] flex flex-wrap sm:flex-nowrap mt-[118px] justify-between w-full items-center mt-[80px]'>
+        <div className='mx-[10px] flex flex-wrap sm:flex-nowrap mt-[118px] justify-between items-center mt-[80px] mb-[30px]'>
             <div className='text-[#928B8B] font-[500] text-[13px] sm:text-[22px] xl:text-[24px]'>
                 @2024 Benefitsbuddy
             </div>

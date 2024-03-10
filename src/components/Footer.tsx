@@ -1,6 +1,12 @@
+'use client'
+
+import { addClassNames } from '@/utils/functions';
 import Link from 'next/link'
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+    const pathName = usePathname();
+
     const navLinks = [
         {
             title: 'About',
@@ -12,7 +18,7 @@ const Footer = () => {
         },
         {
             title: 'Linkedin',
-            href: '/'
+            href: '#linkedin'
         },
         {
             title: 'Contact',
@@ -33,9 +39,14 @@ const Footer = () => {
             <div className='flex flex-wrap sm:flex-nowrap space-x-[14px] md:space-x-[35px] xl:space-x-[55px] font-[500] '>
                 {
                     navLinks?.map((link) => {
+                        const isActive = pathName === link.href;
                         return (<Link
                             key={link.title}
-                            className="text-[13px] sm:text-[25px] xl:text-[32px]"
+                            className={
+                                addClassNames("text-[13px] sm:text-[25px] xl:text-[32px]",
+                                    isActive ? 'text-[#928B8B]' : ''
+                                )
+                            }
                             href={link.href}>{link.title}</Link>)
                     })
                 }

@@ -32,9 +32,10 @@ const Footer = () => {
         <div className="bg-[#000000] h-[1px] w-full my-[37px]"></div>
         <div className="flex  justify-between mx-[10px] items-center">
             <div className='w-[53px] mr-[10px]'>
-                <div
-                    className="bg-black h-[53px] w-[53px] rounded-[50%]"
-                ></div>
+                <img
+                    className="h-[53px] w-[53px] rounded-[50%]"
+                    src="/images/logobenefits.jpeg"
+                />
             </div>
             <div className='flex flex-wrap sm:flex-nowrap space-x-[14px] md:space-x-[35px] xl:space-x-[55px] font-[500] '>
                 {

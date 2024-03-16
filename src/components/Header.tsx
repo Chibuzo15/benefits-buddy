@@ -8,15 +8,15 @@ const Header = () => {
     >
         <Link
             href='/about'
-            className="text-[16px] xl:text-[27px] font-[600]">
+            className="text-[16px] lg:text-[27px] font-[600]">
             About
         </Link>
         <Link href='/' className="w-[150px] flex justify-center" >
-            <div className="bg-black h-[40px] w-[40px] rounded-[50%]" />
+            {/* <div className="bg-black h-[40px] w-[40px] rounded-[50%]" /> */}
         </Link>
         <Link
             href='/waitlist'
-            className=" text-[16px] xl:text-[27px] font-[600]">Waitlist</Link>
+            className=" text-[16px] lg:text-[27px] font-[600]">Waitlist</Link>
     </header>
 }
 

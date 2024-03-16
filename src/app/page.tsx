@@ -1,12 +1,16 @@
 
 import Image from 'next/image'
 
+import VideoBackground from '@/components/VideoBackground';
+
 
 export default function Home() {
   return (
     <main className="mt-[80px] xl:mt-[171px] flex flex-col items-center">
 
-      <div className="bg-black rounded-[50%] h-[80px] w-[80px] md:h-[114px] md:w-[114px]"></div>
+      <img
+        src="/images/logobenefits.jpeg"
+        className="rounded-[50%] h-[80px] w-[80px] md:h-[114px] md:w-[114px]" />
       <div className="mx-[20px] mt-[90px] md:mt-[132px] sm:max-w-[600px] ">
         <div className="font-[500] md:text-[32px] text-center mb-[60px] md:mb-[100px]">
           Benefits buddy is a Comprehensive enterprise solution that takes unstructured company handbooks, benefits guides, and intranet content and transforms it into an elegant natural language search expert
@@ -43,23 +47,23 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="mx-[20px] font-[500] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
+      <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
         With Benefits Buddy's powerful natural language search feature, keren can now find answers to her questions in no time. types in his query, and Benefits Buddy instantly provides relevant, accurate results, saving him valuable time and effort.
       </div>
-      <div className="px-[20px] md:px-[50px] w-full  mb-[80px] sm:mb-[150px] sm:max-w-[600px]">
-        <div className=" rounded-[15px] bg-[#D9D9D9] lg:h-[500px] h-[300px] w-full"
+      <div className="px-[20px] md:px-[50px] w-full  mb-[80px] sm:mb-[150px] sm:max-w-[930px]">
+        <div className=" rounded-[15px] bg-[#D9D9D9]  w-full"
         >
-          Animation
+          <VideoBackground src={'https://firstcityhospital.ng/videos/screen_recording.mp4'} />
         </div>
       </div>
-      <div className="mx-[20px] font-[500] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
+      <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
         Keren simply types in her query, and Benefits Buddy instantly provides relevant, accurate results, saving him valuable time and effort.
       </div>
 
       <div className="px-[20px] md:px-[50px] w-full  mb-[60px] sm:mb-[120px] sm:max-w-[600px]">
-        <div className=" rounded-[15px] bg-[#D9D9D9] lg:h-[500px] h-[300px] w-full"
+        <div className=" rounded-[15px] bg-[#D9D9D9]  w-full"
         >
-          Typing Animation
+          <VideoBackground src={'https://firstcityhospital.ng/videos/typing.mp4'} />
         </div>
       </div>
       <div className="mb-[60px] sm:mb-[120px]">

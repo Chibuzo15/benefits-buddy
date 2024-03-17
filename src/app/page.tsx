@@ -15,22 +15,32 @@ import { Dialog, Disclosure, Transition } from '@headlessui/react';
 export default function Home() {
   const [playVideoOpen, setPlayVideoOpen] = React.useState(false)
 
+  let innerHeightDef = 0;
+  let innerWidthDef = 0;
 
-  const [appHeight, setAppHeight] = React.useState(window.innerHeight);
-  const [appWidth, setAppWidth] = React.useState(window.innerWidth);
+  if (typeof window !== 'undefined') {
+    innerHeightDef = window.innerHeight;
+    innerWidthDef = window.innerWidth
+  }
 
-  const isMobile = appWidth < 500 //React.useRef(window.matchMedia('(pointer: coarse)').matches).current
 
+  const [appHeight, setAppHeight] = React.useState(innerHeightDef || 0);
+  const [appWidth, setAppWidth] = React.useState(innerWidthDef || 0);
+
+  const isMobile = appWidth < 500
 
   React.useEffect(() => {
     const handleResize = () => {
-      setAppHeight(window.innerHeight); // Update appHeight
-      setAppWidth(window.innerWidth); // Update appWidth
+      if (typeof window !== 'undefined') {
+        setAppHeight(window.innerHeight); // Update appHeight
+        setAppWidth(window.innerWidth); // Update appWidth
+      }
     };
 
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize); // Clean up listener
+    if (typeof window !== 'undefined') {
+      window?.addEventListener('resize', handleResize);
+      return () => window?.removeEventListener('resize', handleResize); // Clean up listener
+    }
   }, [setAppHeight, setAppWidth]);
 
   const imageHeightWidthRatio = 444 / 808

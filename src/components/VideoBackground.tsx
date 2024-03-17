@@ -40,10 +40,13 @@ const VideoBackground = ({ src, loop = true, muted = true, autoplay = false }) =
     }, [handleScroll]);
 
     return (
-        <div className="h-full w-full">
+        <div className="h-full w-full ">
             <video
                 ref={videoRef} loop muted={muted}
                 className='object-contain'
+                playsInline
+                width='100%' height='100%'
+                controls={false}
             >
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.

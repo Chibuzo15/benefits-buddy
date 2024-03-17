@@ -1,7 +1,7 @@
 
 export default function About() {
   return (
-    <main className="flex flex-col items-center justify-between p-24 space-y-[20px]">
+    <main className="flex flex-col sm:items-center sm:justify-between py-24 space-y-[20px]">
       <div className="mx-[20px] font-[400] sm:max-w-[600px]">
         We're driven by the belief that the potential of artificial intelligence (AI) extends far beyond mere
         hype. We recognize the profound impact that AI can have on businesses, particularly in

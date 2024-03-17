@@ -141,7 +141,7 @@ export default function WaitList() {
               <Field
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Company Name"
                 className="block w-full px-3 py-2 rounded-[12px] border border-[2px] border-[#00000014]"
               />
               {formik.touched.name && formik.errors.name ? (

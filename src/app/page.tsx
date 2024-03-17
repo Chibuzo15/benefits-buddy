@@ -34,7 +34,7 @@ export default function Home() {
             as="div"
           >
             <div className="fixed top-0 right-0 left-0 bottom-0 bg-[#00000080] backdrop-blur-sm transition-opacity duration-300" />
-            <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div className="fixed inset-0 top-0 right-0 left-0 bottom-0 z-10 overflow-y-auto">
               <div className=" flex items-center  justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0">
                 <button
                   className
@@ -79,10 +79,10 @@ export default function Home() {
         className="rounded-[50%] h-[80px] w-[80px] md:h-[114px] md:w-[114px]" />
       <div className="mx-[20px] mt-[90px] md:mt-[132px] sm:max-w-[600px] ">
         <div className="font-[500] md:text-[32px] text-center mb-[60px] md:mb-[100px]">
-          Benefits buddy is a Comprehensive enterprise solution that takes unstructured company handbooks, benefits guides, and intranet content and transforms it into an elegant natural language search expert
+          Benefits buddy is a <br />Comprehensive enterprise <br />solution that takes unstructured <br />company handbooks, benefits <br />guides, and intranet content and <br />transforms it into an elegant <br />natural language search expert
         </div>
         <div className="font-[300]  md:text-[32px] text-center">
-          Picture a workspace where company handbooks, benefits guides, and intranet content are no longer scattered and confusing, but organized and easily accessible.
+          Picture a workspace where <br />company handbooks, benefits <br />guides, and intranet content are <br />no longer scattered and <br />confusing, but organized and <br />easily accessible.
         </div>
       </div>
       <div className="mt-[80px] sm:mt-[150px] mb-[40px] sm:mb-[70px]">
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-[20px] font-[300] mb-[80px] sm:mb-[150px] md:text-[32px] text-center  sm:max-w-[600px]">
-        She is an employee at a fast-paced tech company, and she  often finds himself lost in a sea of scattered documents and unclear benefits information
+        She is an employee at a fast-<br />paced tech company, and <br />she  often finds himself lost <br />in a sea of scattered <br />documents and unclear <br />benefits information
       </div>
       <div className="mb-[80px] sm:mb-[150px]"
       >
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
-        With Benefits Buddy's powerful natural language search feature, keren can now find answers to her questions in no time. types in his query, and Benefits Buddy instantly provides relevant, accurate results, saving him valuable time and effort.
+        With Benefits Buddy's powerful <br />natural language search feature, <br />keren can now find answers to <br />her questions in no time. types in <br />his query, and Benefits Buddy <br />instantly provides relevant, <br />accurate results, saving him <br />valuable time and effort.
       </div>
       <div className="px-[20px] md:px-[50px] w-full h-[250px] md:h-[400px] lg:h-[450px]  mb-[80px] sm:mb-[150px] sm:max-w-[930px]">
         <div className="relative rounded-[15px] bg-[#D9D9D9] h-full w-full"
@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
-        Keren simply types in her query, and Benefits Buddy instantly provides relevant, accurate results, saving him valuable time and effort.
+        Keren simply types in her query, <br />and Benefits Buddy instantly <br />provides relevant, accurate <br />results, saving him valuable time <br />and effort.
       </div>
 
       <div className="px-[20px] md:px-[50px] w-full  mb-[60px] sm:mb-[120px] sm:max-w-[600px]">
@@ -146,7 +146,7 @@ export default function Home() {
         </button>
       </div>
       <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
-        Soon, more and more employees like Keren will begin using Benefits Buddy, experiencing the same transformation in their work experience.
+        Soon, more and more employees <br />like Keren will begin using Benefits <br />Buddy, experiencing the same <br />transformation in their work <br />experience.
       </div>
       <div className="font-[600] md:text-[32px] mb-[50px] sm:mb-[100px]">Powered by Lockthon</div>
     </main>

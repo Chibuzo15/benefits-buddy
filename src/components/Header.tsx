@@ -4,11 +4,11 @@ import Link from 'next/link'
 const Header = () => {
 
     return <header
-        className="flex items-center justify-between sm:justify-center mt-[30px] xl:mt-[77px] mx-[24px]"
+        className="flex items-center justify-between sm:justify-center mt-[30px] xl:mt-[45px] mx-[24px]"
     >
         <Link
             href='/about'
-            className="text-[16px] lg:text-[27px] font-[600]">
+            className="text-[18px] lg:text-[20px] font-[500]">
             About
         </Link>
         <Link href='/' className="w-[150px] flex justify-center" >
@@ -16,7 +16,7 @@ const Header = () => {
         </Link>
         <Link
             href='/waitlist'
-            className=" text-[16px] lg:text-[27px] font-[600]">Waitlist</Link>
+            className=" text-[18px] lg:text-[20px] font-[500]">Waitlist</Link>
     </header>
 }
 

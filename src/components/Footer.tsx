@@ -9,6 +9,10 @@ const Footer = () => {
 
     const navLinks = [
         {
+            title: 'Home',
+            href: '/'
+        },
+        {
             title: 'About',
             href: '/about'
         },
@@ -27,10 +31,10 @@ const Footer = () => {
     ]
 
     return <footer
-        className="sm:mx-[60px]"
+        className="sm:mx-[60px] flex flex-col items-center"
     >
-        <div className="bg-[#000000] h-[1px] w-full my-[37px]"></div>
-        <div className="flex  justify-between mx-[10px] items-center">
+        <div className="bg-[#000000] h-[1px] w-full my-[37px] max-w-[575px]"></div>
+        <div className="flex px-[19px] sm:px-[0] w-full justify-between mx-[10px] items-center max-w-[575px]">
             <div className='w-[53px] mr-[10px]'>
                 <img
                     className="h-[53px] w-[53px] rounded-[50%]"
@@ -44,7 +48,7 @@ const Footer = () => {
                         return (<Link
                             key={link.title}
                             className={
-                                addClassNames("text-[13px] sm:text-[25px] xl:text-[32px]",
+                                addClassNames("text-[13px] ",
                                     isActive ? 'text-[#928B8B]' : ''
                                 )
                             }
@@ -53,11 +57,11 @@ const Footer = () => {
                 }
             </div>
         </div>
-        <div className='mx-[10px] flex flex-wrap sm:flex-nowrap mt-[118px] justify-between items-center mt-[80px] mb-[30px]'>
-            <div className='text-[#928B8B] font-[500] text-[13px] sm:text-[22px] xl:text-[24px]'>
+        <div className='mx-[10px] max-w-[575px] px-[19px] sm:px-[0] w-full flex flex-wrap sm:flex-nowrap mt-[118px] justify-between items-center mt-[80px] mb-[30px]'>
+            <div className='text-[#928B8B] font-[500] text-[13px] '>
                 @2024 Benefitsbuddy
             </div>
-            <div className='flex items-center text-[#928B8B] font-[500] text-[13px] sm:text-[22px] xl:text-[24px]'>
+            <div className='flex items-center text-[#928B8B] font-[500] text-[13px] '>
                 <span>Terms of condition</span> <span className='mx-[6px]'>|</span> <span>Privacy policy</span>
             </div>
         </div>

@@ -10,38 +10,15 @@ import { addClassNames } from '@/utils/functions';
 import { IoMdClose } from "react-icons/io";
 
 import { Dialog, Disclosure, Transition } from '@headlessui/react';
+import useDeviceSize from '../../hooks/useDeviceSize';
 
 
 export default function Home() {
   const [playVideoOpen, setPlayVideoOpen] = React.useState(false)
 
-  let innerHeightDef = 0;
-  let innerWidthDef = 0;
-
-  if (typeof window !== 'undefined') {
-    innerHeightDef = window.innerHeight;
-    innerWidthDef = window.innerWidth
-  }
-
-
-  const [appHeight, setAppHeight] = React.useState(innerHeightDef || 0);
-  const [appWidth, setAppWidth] = React.useState(innerWidthDef || 0);
+  const [appWidth, appHeight] = useDeviceSize()
 
   const isMobile = appWidth < 500
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setAppHeight(window.innerHeight); // Update appHeight
-        setAppWidth(window.innerWidth); // Update appWidth
-      }
-    };
-
-    if (typeof window !== 'undefined') {
-      window?.addEventListener('resize', handleResize);
-      return () => window?.removeEventListener('resize', handleResize); // Clean up listener
-    }
-  }, [setAppHeight, setAppWidth]);
 
   const imageHeightWidthRatio = 444 / 808
   //image has padding-x of 20px
@@ -177,7 +154,7 @@ export default function Home() {
       </div>
 
       <div className="px-[20px] md:px-[50px] w-full  mb-[60px] sm:mb-[120px] sm:max-w-[600px]">
-        <div className=" rounded-[15px] bg-[#D9D9D9]  w-full"
+        <div className=" rounded-[15px]  w-full"
         >
           <VideoBackground
             src={'https://lwtvbfidklgteiefctec.supabase.co/storage/v1/object/public/cdn/typing.mp4?t=2024-03-17T19%3A03%3A58.713Z'} />

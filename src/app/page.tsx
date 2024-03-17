@@ -15,6 +15,30 @@ import { Dialog, Disclosure, Transition } from '@headlessui/react';
 export default function Home() {
   const [playVideoOpen, setPlayVideoOpen] = React.useState(false)
 
+
+  const [appHeight, setAppHeight] = React.useState(window.innerHeight);
+  const [appWidth, setAppWidth] = React.useState(window.innerWidth);
+
+  const isMobile = appWidth < 500 //React.useRef(window.matchMedia('(pointer: coarse)').matches).current
+
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setAppHeight(window.innerHeight); // Update appHeight
+      setAppWidth(window.innerWidth); // Update appWidth
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize); // Clean up listener
+  }, [setAppHeight, setAppWidth]);
+
+  const imageHeightWidthRatio = 444 / 808
+  //image has padding-x of 20px
+  const imageWidthMobile = appWidth - (20 * 2)
+  const imageHeightMobile = imageWidthMobile * imageHeightWidthRatio
+
+
   const renderVideoModal = () => {
 
     return (
@@ -58,7 +82,7 @@ export default function Home() {
                     <div className=" mt-[100px] md:h-[80vh] max-w-[800px] md:w-[75%] text-center ">
                       <VideoBackground
                         autoplay={true}
-                        src={'https://firstcityhospital.ng/videos/screen_recording.mp4'} />
+                        src={'https://lwtvbfidklgteiefctec.supabase.co/storage/v1/object/public/cdn/screen_recording.mp4?t=2024-03-17T19%3A02%3A53.230Z'} />
                     </div>
                     : undefined
                 }
@@ -116,11 +140,23 @@ export default function Home() {
       <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
         With Benefits Buddy's powerful <br />natural language search feature, <br />keren can now find answers to <br />her questions in no time. types in <br />his query, and Benefits Buddy <br />instantly provides relevant, <br />accurate results, saving him <br />valuable time and effort.
       </div>
-      <div className="px-[20px] md:px-[50px] w-full h-[250px] md:h-[400px] lg:h-[450px]  mb-[80px] sm:mb-[150px] sm:max-w-[930px]">
-        <div className="relative rounded-[15px] bg-[#D9D9D9] h-full w-full"
+      <div
+        style={{
+          ...(isMobile && { height: imageHeightMobile }),
+          // height: 'auto'
+        }}
+        className={
+          addClassNames(
+            // "h-[250px] md:h-[400px] lg:h-[450px]",
+            isMobile ? '' : 'h-[400px] lg:h-[450px]',
+            "px-[20px] md:px-[50px] w-full  mb-[80px] sm:mb-[150px] sm:max-w-[930px]"
+          )
+        }>
+        <div className="relative rounded-[15px] h-full w-full"
         >
           <Image
             layout="fill"
+            objectFit="contain"
             src='/images/typing_background.jpg'
             alt='typing animation image'
           />
@@ -134,7 +170,7 @@ export default function Home() {
         <div className=" rounded-[15px] bg-[#D9D9D9]  w-full"
         >
           <VideoBackground
-            src={'https://firstcityhospital.ng/videos/typing.mp4'} />
+            src={'https://lwtvbfidklgteiefctec.supabase.co/storage/v1/object/public/cdn/typing.mp4?t=2024-03-17T19%3A03%3A58.713Z'} />
         </div>
       </div>
       <div className="mb-[60px] sm:mb-[120px]">

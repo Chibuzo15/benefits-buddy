@@ -26,7 +26,7 @@ const Footer = () => {
         },
         {
             title: 'Contact',
-            href: 'mailto:contact@benefitsbuddy.com'
+            href: 'mailto:Anjan@benefitsbuddy.com'
         },
     ]
 

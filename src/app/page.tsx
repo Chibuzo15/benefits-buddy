@@ -1,13 +1,79 @@
+'use client'
+
+import * as React from 'react'
 
 import Image from 'next/image'
 
 import VideoBackground from '@/components/VideoBackground';
+import { addClassNames } from '@/utils/functions';
+
+import { IoMdClose } from "react-icons/io";
+
+import { Dialog, Disclosure, Transition } from '@headlessui/react';
 
 
 export default function Home() {
+  const [playVideoOpen, setPlayVideoOpen] = React.useState(false)
+
+  const renderVideoModal = () => {
+
+    return (
+      <Transition appear show={playVideoOpen} as={React.Fragment}>
+        <Dialog
+          className='z-[1000] absolute'
+          onClose={() => {
+            setPlayVideoOpen(false)
+          }}>
+          <Transition.Child
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+            as="div"
+          >
+            <div className="fixed top-0 right-0 left-0 bottom-0 bg-[#00000080] backdrop-blur-sm transition-opacity duration-300" />
+            <div className="fixed inset-0 z-10 overflow-y-auto">
+              <div className=" flex items-center  justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0">
+                <button
+                  className
+                  onClick={() => {
+                    setPlayVideoOpen(false)
+                  }}>
+                  <span className={
+                    addClassNames(
+                      " bg-[#ffffff32] text-white flex items-center justify-center h-[35px] w-[35px] focus:ring-offset-2 focus:ring-blue-500",
+                      "rounded-[50%] p-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-[#ffffff54] focus:outline-none focus:ring-2 ",
+                      "absolute top-[50px] right-[30px] md:right-[100px]"
+                    )
+                  }>
+                    <IoMdClose
+                      style={{ color: 'white' }}
+                    />
+                  </span>
+                </button>
+                {
+                  playVideoOpen ?
+                    <div className=" mt-[100px] md:h-[80vh] max-w-[800px] md:w-[75%] text-center ">
+                      <VideoBackground
+                        autoplay={true}
+                        src={'https://firstcityhospital.ng/videos/screen_recording.mp4'} />
+                    </div>
+                    : undefined
+                }
+              </div>
+            </div>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
+    )
+  }
+
+
   return (
     <main className="mt-[80px] xl:mt-[171px] flex flex-col items-center">
-
+      {renderVideoModal()}
       <img
         src="/images/logobenefits.jpeg"
         className="rounded-[50%] h-[80px] w-[80px] md:h-[114px] md:w-[114px]" />
@@ -50,10 +116,14 @@ export default function Home() {
       <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
         With Benefits Buddy's powerful natural language search feature, keren can now find answers to her questions in no time. types in his query, and Benefits Buddy instantly provides relevant, accurate results, saving him valuable time and effort.
       </div>
-      <div className="px-[20px] md:px-[50px] w-full  mb-[80px] sm:mb-[150px] sm:max-w-[930px]">
-        <div className=" rounded-[15px] bg-[#D9D9D9]  w-full"
+      <div className="px-[20px] md:px-[50px] w-full h-[250px] md:h-[400px] lg:h-[450px]  mb-[80px] sm:mb-[150px] sm:max-w-[930px]">
+        <div className="relative rounded-[15px] bg-[#D9D9D9] h-full w-full"
         >
-          <VideoBackground src={'https://firstcityhospital.ng/videos/screen_recording.mp4'} />
+          <Image
+            layout="fill"
+            src='/images/typing_background.jpg'
+            alt='typing animation image'
+          />
         </div>
       </div>
       <div className="mx-[20px] font-[300] mb-[50px] sm:mb-[120px] md:text-[32px] text-center  sm:max-w-[600px]">
@@ -63,11 +133,13 @@ export default function Home() {
       <div className="px-[20px] md:px-[50px] w-full  mb-[60px] sm:mb-[120px] sm:max-w-[600px]">
         <div className=" rounded-[15px] bg-[#D9D9D9]  w-full"
         >
-          <VideoBackground src={'https://firstcityhospital.ng/videos/typing.mp4'} />
+          <VideoBackground
+            src={'https://firstcityhospital.ng/videos/typing.mp4'} />
         </div>
       </div>
       <div className="mb-[60px] sm:mb-[120px]">
         <button
+          onClick={() => setPlayVideoOpen(true)}
           className="bg-[#2DD4A2] px-[25px] rounded-[10px] h-[50px] font-[500] lg:h-[78px] text-[20px] lg:text-[32px]"
         >
           Click to see the full gist

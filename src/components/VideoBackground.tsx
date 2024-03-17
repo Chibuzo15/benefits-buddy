@@ -2,9 +2,17 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 
-const VideoBackground = ({ src, loop = true, muted = true }) => {
+const VideoBackground = ({ src, loop = true, muted = true, autoplay = false }) => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+
+    React.useEffect(() => {
+        const videoElement = videoRef.current;
+        if (autoplay) {
+            videoElement?.play();
+            setIsPlaying(true);
+        }
+    }, [])
 
     const handleScroll = () => {
         const videoElement = videoRef.current;
@@ -32,7 +40,7 @@ const VideoBackground = ({ src, loop = true, muted = true }) => {
     }, [handleScroll]);
 
     return (
-        <div className="video-background">
+        <div className="h-full w-full">
             <video
                 ref={videoRef} loop muted={muted}
                 className='object-contain'
